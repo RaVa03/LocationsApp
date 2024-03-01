@@ -1,0 +1,23 @@
+nav {
+   
+    background-color: #7db0eb;
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+    
+}
+/* Media query for smaller screens (adjust the breakpoint as needed) */
+@media (max-width: 368px) {
+    nav {
+      flex-direction: column; /* Flex items will be placed in a column */
+      align-items: center; /* Optional: Center items along the cross axis */
+    }
+  }
+li {
+    display:flex;
+    margin-right: 10px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
