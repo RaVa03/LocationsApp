@@ -5,7 +5,6 @@ export default function MainLayout(props){
         <div>
             <MainNavigation/>
             <main className="main">
-                
                 {props.children}
             </main>
         </div>

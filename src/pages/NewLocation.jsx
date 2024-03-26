@@ -6,7 +6,9 @@ export default function NewLocation(){
     const navigateTo=useNavigate();
     function addLocationHandler(locationData){
         fetch(
-            "https://locations-482dc-default-rtdb.firebaseio.com/locations.json",
+            //"https://locations-482dc-default-rtdb.firebaseio.com/locations.json",
+            //^using Firebase
+            "http://localhost:3000/new-location",
         {
             method: 'POST',
             body: JSON.stringify(locationData),//datele pe care le trimitem
@@ -32,9 +34,7 @@ export default function NewLocation(){
         //in loc de fetch puteam sa facem si cu axios
         //fetch e by default metoda GET, ca sa o schimbam adaugam al doilea argument
     }
-
- 
-
+    
     return(
         <div className="NewLocationPage">
             <h1 className="pageTitle">New Location</h1>

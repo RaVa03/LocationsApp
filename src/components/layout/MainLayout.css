@@ -1,13 +1,13 @@
 .main {
-    /* margin: 1rem auto; */
-    /* This sets a margin of 3 rem units on the top and bottom, and 'auto' on the left and right.
-     The 'auto' value for left and right margins centers the element horizontally within its containing element */
     width: 90%; 
     /* The width of the element is set to 90% of its containing element's width */
-    /* max-width: 40rem; */
-    /* The maximum width of the element is set to 40 rem units. 
-    This ensures that the element won't exceed a certain width even if the viewport or container is wider. */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+  }
+  .main div{
+    /* width: 100%;  */
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column; */
   }

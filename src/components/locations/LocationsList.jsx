@@ -1,11 +1,12 @@
-import LocationItem from "./LocationItem"
+
 import "./LocationList.css"
 
 import LocationCard from "./LocationCard"
 
-export default function LocationList(props){
+export default function LocationsList(props){
+
     return(
-        <ul className="AllLocations">
+        <ul className="LocationsList">
             {
                 props.locations.map((l) => (
                     <LocationCard 
@@ -18,16 +19,6 @@ export default function LocationList(props){
                     />
                 ))
             }
-            {/* {props.locations.map((l) => (
-                <LocationItem
-                    id={l.id}
-                    key={l.id}
-                    title={l.title}
-                    author={l.author}
-                    image={l.image}
-                    description={l.description}
-                />
-            ))} */}
         </ul>
     )
 }

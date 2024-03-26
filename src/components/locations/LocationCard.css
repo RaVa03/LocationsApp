@@ -2,7 +2,7 @@
     width: 70%;
     max-width:350px;
     /* height: 500px; */
-    height: 35vw; /* Set the height to 50% of the viewport width/inianltimea e in functie de latime */
+    height: 35vw; /* Set the height to 50% of the viewport width/inaltimea e in functie de latime */
     min-width: 70%;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,6 @@
     align-items: center;
     border: 1px solid black;
     border-radius: 20px;
-
     margin-bottom: 50px;
     overflow: hidden;
 }
@@ -18,7 +17,6 @@
 .card-image {
     width: 100%;
     height: 75%;
-    /* flex: 0.7; */
 }
 
 .card-image img {
@@ -29,8 +27,7 @@
 .card-details {
     width: 100%;
     height: 25%;
-    /* flex: 0.4; */
-
+    padding-top: 1vw;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -44,8 +41,16 @@
 }
 
 .card-details p{
-    padding: 0px;
+    
     margin: 0px;
     font-size: 1vw;
     padding-top: 0.5vw;
+}
+.card-details-text span{
+    font-size: 1.5vw;
+}
+.card-details-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

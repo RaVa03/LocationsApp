@@ -1,6 +1,7 @@
 import Card from '../ui/Card'
 import { useRef , useState} from 'react';
 import "./NewLocationForm.css"
+import Button from "../ui/Button";
 export default function NewLocationForm(props){
     // const titleInputRef=useRef();
     // const imageInputRef=useRef();
@@ -36,28 +37,28 @@ export default function NewLocationForm(props){
         props.onAddLocation(locationData)
     }
     return(
-        <Card>
-            <form className='NewLocationForm' onSubmit={submitHandler}>
-                <div>
+        <Card  backgroundColor= "#CAE2CC">
+            <form className='NewLocationForm' onSubmit={submitHandler} method="POST">
+                <div className='divForm'>
                     <label htmlFor='title'> Location title</label>
                     <input onChange={(event) => {setTitleValue(event.target.value); console.log(event.target.value);}} type="text" name="title" id="title" required/>
                 </div>
-                <div>
+                <div className='divForm'>
                     <label htmlFor='image'> Location image</label>
                     {/* v1, cu ref hook, la fiecare camp trebuie adaugat ref */}
                     {/* <input ref={imageInputRef} type="url" name="title" id="image" required/> */}
                     <input onChange={(event) => {setImageValue(event.target.value); }} type="url" name="title" id="image" required/>
                 </div>
-                <div>
+                <div className='divForm'>
                     <label htmlFor='author'> Location author</label>
                     <input  onChange={(event) => {setAuthorValue(event.target.value); }} type="text" name="author" id="author" required/>
                 </div>
-                <div>
-                    <label htmlFor='description'> Location author</label>
+                <div className='divForm'>
+                    <label htmlFor='description'> Location description</label>
                     <textarea  onChange={(event) => {setDescriptionValue(event.target.value); }} id="description"  name="description" required rows="5" cols="20" maxLength="1000"></textarea>
                 </div>
-                <div>
-                    <button>Add location</button>
+                <div className='buttonForm'>
+                <Button color="white" text={"Add location"} ></Button>
                 </div>
             </form>
         </Card>

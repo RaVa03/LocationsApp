@@ -1,4 +1,4 @@
-.MainContainer{
+.MainContainerFavs{
     display: flex;
     justify-content: center ;
     justify-items: center;
@@ -7,3 +7,6 @@
     justify-content: center;
     flex-direction: column;
 }
+h1 {
+    text-align: center;
+  }

@@ -8,7 +8,11 @@ export default function AllLocations(){
     useEffect(()=>{
         setIsLoading(true);
         fetch(
-            "https://locations-482dc-default-rtdb.firebaseio.com/locations.json"
+           // "https://locations-482dc-default-rtdb.firebaseio.com/locations.json"
+           //^if using Firebase
+           "http://localhost:3000",
+           {headers: { 'Content-type': 'application/json'//evidentiem ca datele sunt de tip JSON
+        }}
         ).then((response)=>{
             return response.json();
         })
@@ -25,6 +29,10 @@ export default function AllLocations(){
             setIsLoading(false) 
             setLoadedLocations(locations)     
         })
+        .catch(error => {
+            console.error('Error fetching locations:', error);
+            setIsLoading(false);
+        });
     
     },[])
     if (isLoading) {

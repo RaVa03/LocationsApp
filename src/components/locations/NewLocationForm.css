@@ -2,14 +2,27 @@
     padding: 10px 10px;
     display: flex;
     flex-direction: column;
-    /* align-content: center; */
     justify-content:space-evenly;
     height:100%;
+    align-items: center;
 }
 
 .NewLocationForm textarea {
-    /* resize: none; */
     max-width: 200px;
     max-height: 100px;
     overflow-y: auto; /* Adaugă un scrollbar vertical dacă e nevoie */
+    border-radius: 5px; 
+}
+.NewLocationForm input{
+border-radius: 5px; 
+}
+.NewLocationForm label{
+    align-self: center;
+}
+.divForm{
+    display: flex;
+    flex-direction: column;
+}
+.buttonForm{
+    align-self: center;
 }

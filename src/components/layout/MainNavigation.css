@@ -1,16 +1,14 @@
 nav {
-   
-    background-color: #7db0eb;
+    background-color: #436440;
     padding: 10px;
     justify-content: center;
     display: flex;
-    
 }
-/* Media query for smaller screens (adjust the breakpoint as needed) */
+ /* Media query for smaller screens */
 @media (max-width: 368px) {
     nav {
-      flex-direction: column; /* Flex items will be placed in a column */
-      align-items: center; /* Optional: Center items along the cross axis */
+      flex-direction: column;
+      align-items: center;
     }
   }
 li {
