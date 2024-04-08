@@ -4,6 +4,7 @@ import AllLocations from './pages/AllLocations'
 import LocationDetails from './pages/LocationDetails'
 import MainLayout from './components/layout/MainLayout'
 import NewLocation from './pages/NewLocation'
+import EditLocation from './pages/EditLocation'
 
 function App() {
  
@@ -13,8 +14,9 @@ function App() {
         <Routes>
           <Route path="/" element={<AllLocations/>}></Route>
           <Route path="/favorites-locations" element={<Favorites/>}></Route>
-          <Route path="/id/details" element={<LocationDetails/>}></Route>
+          <Route path="/locations/:locationId" element={<LocationDetails/>}></Route>
           <Route path="/new-location" element={<NewLocation/>}></Route>
+          <Route path="/locations/:locationId/edit"element={<EditLocation/>}></Route>
         </Routes>    
       </MainLayout>
     </>

@@ -2,3 +2,7 @@ h1 {
   font-size: 2em;
   line-height: 1.1;
 }
+body{
+min-width: 470px; 
+/* min-height: 800px;  */
+}

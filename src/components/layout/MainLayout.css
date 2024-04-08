@@ -1,6 +1,5 @@
 .main {
     width: 90%; 
-    /* The width of the element is set to 90% of its containing element's width */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

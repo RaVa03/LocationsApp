@@ -4,7 +4,6 @@ nav {
     justify-content: center;
     display: flex;
 }
- /* Media query for smaller screens */
 @media (max-width: 368px) {
     nav {
       flex-direction: column;

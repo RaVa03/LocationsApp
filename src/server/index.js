@@ -20,21 +20,20 @@ async function main() {
 // Example API Routes
 const router = express.Router();
 
-// Define a GET route
+// GET route for all locations
 router.get('/', async (req, res) => {
   try {
-    // Retrieve locations from MongoDB
-    const locations = await LocationModel.find(); // LocationModel is the Mongoose model
+    const locations = await LocationModel.find(); 
     res.json(locations);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 });
 
-// Define a POST route
+// POST route for new location
 router.post('/new-location', async (req, res) => {
   console.log(`REQ: ${req}`)
-  const location = new LocationModel({// LocationModel is the Mongoose model
+  const location = new LocationModel({
     author: req.body.author,
     description: req.body.description,
     image: req.body.image,
@@ -49,9 +48,72 @@ router.post('/new-location', async (req, res) => {
   }
 });
 
+
+// DELETE route for deleting a location
+router.delete('/locations/:id', async (req, res) => {
+  const { id } = req.params;
+console.log("rEACHED ROUTE")
+  try {
+    const deletedLocation = await LocationModel.findByIdAndDelete(id);
+
+    if (!deletedLocation) {
+      return res.status(404).json({ message: 'Location not found' });
+    }
+
+    res.status(200).json({ message: 'Location deleted successfully', deletedLocation });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+//Get route for details page
+router.get("/locations/:id",async (req,res)=>{
+  const {id}=req.params;
+  
+  try {
+    const location = await LocationModel.findById(id); 
+    console.log(location)
+    res.json(location);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+})
+
+// PUT route for edit location
+router.put('/locations/:id', async (req, res) => {
+
+  const {id}=req.params;
+  console.log("edit put route")
+  try {
+   const location = await LocationModel.findByIdAndUpdate(id, req.body, { new: true })
+    if (!location) {
+      return res.status(404).json({ message: 'Location not found' });
+    }
+    
+  res.status(201).json(location);
+
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+//Get route-> for edit page - not necessary
+// router.get("/locations/:id/edit",async (req,res)=>{
+//   const {id}=req.params;
+//   console.log("edit get route")
+//   try {
+//     const location = await LocationModel.findById(id); 
+//     console.log(location)
+//     res.json(location);
+//   } catch (err) {
+//     res.status(500).json({ message: err.message });
+//   }
+// })
+
 // Register the router
 app.use('/', router);
 
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+

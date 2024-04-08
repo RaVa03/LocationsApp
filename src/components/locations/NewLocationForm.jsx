@@ -3,10 +3,6 @@ import { useRef , useState} from 'react';
 import "./NewLocationForm.css"
 import Button from "../ui/Button";
 export default function NewLocationForm(props){
-    // const titleInputRef=useRef();
-    // const imageInputRef=useRef();
-    // const authorInputRef=useRef();
-    // const descriptionInputRef=useRef();
 
     const [titleValue, setTitleValue]=useState("");
     const [imageValue, setImageValue]=useState("");
@@ -15,18 +11,6 @@ export default function NewLocationForm(props){
 
     function submitHandler(event){
         event.preventDefault();
-        // const enteredTitle=titleInputRef.current.value;
-        // const enteredImage=imageInputRef.current.value;
-        // const enteredAuthor=authorInputRef.current.value;
-        // const enteredDescription=descriptionInputRef.current.value;
-
-        // const locationData={
-        //     title:enteredTitle,
-        //     image:enteredImage,
-        //     author:enteredAuthor,
-        //     decription:enteredDescription,
-        // }
-        //v1 ^, cu useRef hook
         const locationData={
             title:titleValue,
             image:imageValue,
@@ -45,8 +29,6 @@ export default function NewLocationForm(props){
                 </div>
                 <div className='divForm'>
                     <label htmlFor='image'> Location image</label>
-                    {/* v1, cu ref hook, la fiecare camp trebuie adaugat ref */}
-                    {/* <input ref={imageInputRef} type="url" name="title" id="image" required/> */}
                     <input onChange={(event) => {setImageValue(event.target.value); }} type="url" name="title" id="image" required/>
                 </div>
                 <div className='divForm'>

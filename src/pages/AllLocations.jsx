@@ -8,8 +8,6 @@ export default function AllLocations(){
     useEffect(()=>{
         setIsLoading(true);
         fetch(
-           // "https://locations-482dc-default-rtdb.firebaseio.com/locations.json"
-           //^if using Firebase
            "http://localhost:3000",
            {headers: { 'Content-type': 'application/json'//evidentiem ca datele sunt de tip JSON
         }}

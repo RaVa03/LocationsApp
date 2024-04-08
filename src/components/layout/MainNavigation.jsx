@@ -8,12 +8,13 @@ export default function MainNavigation(){
     return(
         <header className='header'>
             <nav>
-                <ul><li><Link to="/">All Meetups</Link> </li></ul>
+                <ul><li><Link to="/">All Locations</Link> </li></ul>
                 <ul><li><Link to="/favorites-locations">Favorites-locations  <span>
 		                  {favoritesCtx.totalFavorites}
 		                </span>
-</Link> </li></ul>
-                <ul><li><Link to="/id/details">Details</Link> </li></ul>
+                        </Link>
+                    </li>
+                </ul>
                 <ul><li><Link to="/new-location">New location</Link></li></ul>
             </nav>
         </header>

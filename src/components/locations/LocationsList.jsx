@@ -10,6 +10,7 @@ export default function LocationsList(props){
             {
                 props.locations.map((l) => (
                     <LocationCard 
+                        _id={l._id}
                         id={l.id}
                         key={l.id}
                         title={l.title}

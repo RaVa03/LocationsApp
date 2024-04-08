@@ -1,0 +1,11 @@
+.pageTitle {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+.EditLocationPage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 

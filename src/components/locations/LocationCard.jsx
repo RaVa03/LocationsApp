@@ -1,5 +1,6 @@
 import React from "react";
 import { useContext } from 'react';
+import {Link} from 'react-router-dom'
 //hook that allows making a connection between this ocmponent and THE CONTEXT
 
 import "./LocationCard.css";
@@ -18,6 +19,7 @@ const LocationCard = (props) => {
       } else {
         favoritesCtx.addFavorite({
           //cand se executa, in FavoritesContextProvider se face update si la userFavorites, si deci update la toate componentele copil
+          _id: props._id,
           id: props.id,
           title: props.title,
           description: props.description,
@@ -26,7 +28,7 @@ const LocationCard = (props) => {
         });
       }
     }
-
+    const objectId=props._id;
     return (
         <div className="card-container">
             <div className="card-image">
@@ -34,21 +36,12 @@ const LocationCard = (props) => {
             </div>
             <div className="card-details">
                 <div className="card-details-text">  <h1> {props.title}  <span>#by {props.author}</span> </h1>
-                {/* <p> {props.author} </p> */}
-                {/* <p> {props.description} </p> */}
                 </div>
                 <div className="card-details-buttons">
                 <Button color="white" text={itemIsFavorite ? 'Remove from Favorites' : 'To Favorites'} onAction={toggleFavoriteStatusHandler}></Button>
-                  <Button color="white" text={"Details"} ></Button>
-                </div>
-              
-                {/* <button onClick={toggleFavoriteStatusHandler}>
-		            {itemIsFavorite ? 'Remove from Favorites' : 'To Favorites'}
-		          </button> */}
-              {/*^ simple button */}
-                 
+                 <Link to={`/locations/${objectId}`}> <Button color="white" text={"Details"} ></Button></Link>
+                </div>   
             </div>
-
         </div>
     )
 }

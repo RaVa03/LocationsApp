@@ -12,13 +12,13 @@
   }
   @media (min-width: 0px) {
     .Button{
-        padding: 1vw 1vw;
+        padding: 1vw 2vw;
         font-size: 14px;
     }
   }
   @media (min-width: 700px) {
     .Button{
-        padding: 1vw 1vw;
+        padding: 1vw 2vw;
         font-size: 14px;
     }
   }
